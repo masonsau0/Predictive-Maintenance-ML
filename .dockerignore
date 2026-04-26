@@ -1,0 +1,35 @@
+# Version control
+.git/
+.gitignore
+
+# Python build artefacts
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*.egg-info/
+.pytest_cache/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Notebooks (kept as project artefacts, not needed at runtime)
+*.ipynb
+
+# Project documentation / images (not needed at runtime)
+README.md
+LICENSE
+*.png
+
+# Environment / secrets
+.env
+.env.*
+
+# Docker
+Dockerfile
+.dockerignore
+
+# CI
+.github/

@@ -130,7 +130,31 @@ results, fitted = train_and_evaluate(X_tr, X_te, y_tr, y_te, names)
 print(results)
 ```
 
+### Docker
+
+The dashboard is fully containerised. Build and run locally:
+
+```bash
+docker build -t predictive-maintenance-ml .
+docker run --rm -p 8501:8501 predictive-maintenance-ml
+# open http://localhost:8501
+```
+
+A multi-stage build (`python:3.13-slim` base) produces a ~600 MB image
+running as a non-root user with a Streamlit health-check probe configured.
+
+A GitHub Actions workflow (`.github/workflows/docker.yml`) builds and
+pushes the image to **GitHub Container Registry** on every commit to
+`main`, tagged `latest` plus a short SHA. Pull and run the published
+image:
+
+```bash
+docker pull ghcr.io/masonsau0/predictive-maintenance-ml:latest
+docker run --rm -p 8501:8501 ghcr.io/masonsau0/predictive-maintenance-ml:latest
+```
+
 ## Stack
 
 Python · scikit-learn · pandas · NumPy · matplotlib · seaborn ·
-**Streamlit** (dashboard)
+**Streamlit** (dashboard) · **Docker** + **GitHub Actions** (containerised
+build + automated publish to GHCR)
