@@ -78,7 +78,9 @@ def train_models(data_path: str = "ai4i2020.csv"):
 @st.cache_resource(show_spinner="Computing per-failure-mode metrics...")
 def compute_mode_results(data_path: str = "ai4i2020.csv"):
     df = pd.read_csv(data_path)
-    return per_mode_analysis(df, None, [])
+    df_fe = engineer_features(df)
+    _, _, feature_names = get_feature_matrix(df_fe)
+    return per_mode_analysis(df, None, feature_names)
 
 
 def predict_one(reading: dict, fitted: dict, feature_names: list[str]):
