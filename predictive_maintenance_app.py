@@ -123,6 +123,48 @@ def predict_one(reading: dict, fitted: dict, feature_names: list[str]):
 st.title("Predictive Maintenance — AI4I 2020")
 st.caption("Score live sensor readings against three classifiers trained on 10,000 historical machine cycles.")
 
+with st.expander("How to use this app", expanded=False):
+    st.markdown("""
+**What this app does in plain English.**
+A factory has machines with sensors on them — temperature, rotation
+speed, torque, and tool wear. We trained three different AI models on
+10,000 past machine cycles to predict whether a machine is about to
+fail. This app lets you play with the sensor readings and see what each
+model thinks the failure risk is.
+
+**Quick start (60 seconds).**
+1. Look at the **left sidebar** — those sliders are the sensor readings
+   for one machine cycle.
+2. Move any slider and watch the **failure probability** numbers update
+   on the right.
+3. Try the "What-if" chart — pick a sensor, see how the failure risk
+   changes as that one sensor moves.
+
+**What each sidebar control does.**
+- **Product quality variant (L / M / H)** — what kind of part is being
+  produced. Low-quality parts fail more often.
+- **Air temperature** — ambient temperature in the factory, in Kelvin
+  (295 K is about 22 °C / 71 °F).
+- **Process temperature** — temperature inside the machine. The bigger
+  the gap between this and air temperature, the harder the machine is
+  working.
+- **Rotational speed** — how fast the spindle is spinning (rpm).
+- **Torque** — how much twisting force the machine is applying. Higher
+  torque + high wear = high stress.
+- **Tool wear** — how many minutes the cutting tool has been in use.
+  Old tools fail more.
+
+**What the numbers on the right mean.**
+- **Failure probability** for each model — a number from 0 to 1. Higher
+  = more likely to fail. Above 0.5 typically means "act now."
+- **Model performance metrics** (ROC-AUC, PR-AUC, F2) tell you how
+  reliable each model is on test data. Closer to 1.0 = better.
+
+**Try this scenario.** Set Tool wear all the way up (around 250 min) and
+Torque high (around 65). Watch the failure probability spike across all
+three models — these are the conditions where machines actually break.
+""")
+
 models = train_models()
 df = models["df"]
 df_fe = models["df_fe"]
