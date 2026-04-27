@@ -1,6 +1,6 @@
 # Predictive Maintenance for Manufacturing Equipment
 
-**[Live demo](https://predictive-maintenance-ml.streamlit.app)** — runs in your browser, no install required.
+**[Live demo](https://mason-predictive-maintenance-ml.streamlit.app/)** — runs in your browser, no install required.
 
 End-to-end ML system that flags at-risk machines from real-time sensor
 readings, built on the **AI4I 2020 Predictive Maintenance Dataset**
