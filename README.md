@@ -1,5 +1,7 @@
 # Predictive Maintenance for Manufacturing Equipment
 
+**[Live demo](https://predictive-maintenance-ml.streamlit.app)** — runs in your browser, no install required.
+
 End-to-end ML system that flags at-risk machines from real-time sensor
 readings, built on the **AI4I 2020 Predictive Maintenance Dataset**
 (10,000 cycles, 6 sensor channels, 5 failure modes). Three classifiers are
