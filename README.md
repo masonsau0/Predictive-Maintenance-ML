@@ -1,6 +1,6 @@
 # Predictive Maintenance for Manufacturing Equipment
 
-**[Live demo](https://mason-predictive-maintenance-ml.streamlit.app/)** : runs in the browser, no install required.
+**[Live demo](https://mason-predictive-maintenance-ml.streamlit.app/)**: runs in the browser, no install required.
 
 End-to-end ML system that flags at-risk machines from real-time sensor
 readings, built on the **AI4I 2020 Predictive Maintenance Dataset**
@@ -10,12 +10,12 @@ trained and benchmarked, decision thresholds are tuned for **F2 score**
 missing a failure is worse than raising a false alarm), and the entire
 pipeline is exposed through three layers:
 
-1. A **Python module** (`predictive_maintenance.py`) : load, engineer
+1. A **Python module** (`predictive_maintenance.py`): load, engineer
    features, train, evaluate, run per-failure-mode breakdown.
-2. A **walkthrough notebook** (`predictive_maintenance.ipynb`) : narrative
+2. A **walkthrough notebook** (`predictive_maintenance.ipynb`): narrative
    + figures for the full pipeline.
-3. An **interactive Streamlit dashboard** (`predictive_maintenance_app.py`)
-   : adjust sensor sliders to score a live machine cycle, sweep one feature
+3. An **interactive Streamlit dashboard** (`predictive_maintenance_app.py`):
+   adjust sensor sliders to score a live machine cycle, sweep one feature
    to see the failure-probability response, view test-set performance, and
    batch-score uploaded CSVs.
 
